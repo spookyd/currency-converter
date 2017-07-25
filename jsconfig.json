@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "checkJs": true,
+        "allowSyntheticDefaultImports": true,
+        "sourceMap": true,
+        "jsx": "react"
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
