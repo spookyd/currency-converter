@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
         fontSize: 14,
         alignItems: 'center',
         textAlign: 'center',
-    }
+    },
 })
 
 export default styles

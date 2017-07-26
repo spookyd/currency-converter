@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
     image: {
         width: 19,
         marginRight: appStyles.dimensions.padding.vertical,
+        tintColor: '#FFFFFF'
     },
     text: {
         paddingVertical: appStyles.dimensions.margins.vertical,

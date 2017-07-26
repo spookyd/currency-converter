@@ -1,19 +1,28 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 import { ScrollView, StatusBar } from 'react-native'
 
 import { ListItem, Separator } from '../../components/List'
+
+import { changePrimaryColor } from '../../actions/theme'
 
 import appStyles from '../../config/styles'
 import styles from './styles'
 
 class Themes extends Component {
+
+    static propTypes = {
+        navigation: PropTypes.object,
+        dispatch: PropTypes.func,
+    }
     
     handleThemePress = (color) => {
-        console.log('Theme pressed ', color)
+        this.props.dispatch(changePrimaryColor(color))
+        this.props.navigation.goBack()
     }
 
     render() {
-        console.log('GOingi to render', appStyles.colors.orangeTheme)
         return (
             <ScrollView>
                 <StatusBar barStyle='default' translucent={false} />
@@ -55,4 +64,4 @@ class Themes extends Component {
 
 }
 
-export default Themes
+export default connect()(Themes)

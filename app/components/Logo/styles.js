@@ -1,7 +1,7 @@
 import { StyleSheet, Dimensions } from 'react-native'
 import appStyles from '../../config/styles'
 
-const imageWidth = Dimensions.get('window').width / 4
+const imageWidth = Dimensions.get('window').width / 2
 const largeContainerImageSize = imageWidth
 const largeImageSize = imageWidth / 2
 
@@ -25,6 +25,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         width: imageSize.container.large,
         height: imageSize.container.large
+    },
+    image: {
+        width: imageSize.nested.large,
+        tintColor: appStyles.colors.primary,
     },
     text: appStyles.text.title
 })

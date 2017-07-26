@@ -10,9 +10,7 @@ const Icon = ({ checkmark, visible, iconBackground }) => {
     if (visible) {
         iconStyles.push(styles.iconContainerVisible)
     }
-    console.log('Background color ', iconBackground)
     if (iconBackground) {
-        console.log('Should set color ', iconBackground)
         iconStyles.push({backgroundColor: iconBackground})
     }
     return (
