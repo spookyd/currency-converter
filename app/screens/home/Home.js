@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { View, StatusBar, KeyboardAvoidingView } from 'react-native'
 
+import { connectAlert } from '../../components/Alert'
 import { HeaderToggle } from '../../components/Header'
 import { Container } from '../../components/Container'
 import { Logo } from '../../components/Logo'
@@ -10,7 +11,7 @@ import { InputWithButton } from '../../components/TextInput'
 import { ClearButton } from '../../components/Button'
 import { LastConverted } from '../../components/Text'
 
-import { swapCurrency, changeCurrencyAmount } from '../../actions/currencies'
+import { swapCurrency, changeCurrencyAmount, getInitialConversion } from '../../actions/currencies'
 
 import styles from './styles'
 
@@ -26,6 +27,18 @@ class Home extends Component {
         lastConvertedDate: PropTypes.object,
         isFetching: PropTypes.bool,
         primaryColor: PropTypes.string,
+        alertWithType: PropTypes.func,
+        currencyError: PropTypes.string,
+    }
+
+    componentWillMount() {
+        this.props.dispatch(getInitialConversion())
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.currencyError && nextProps.currencyError !== this.props.currencyError) {
+            this.props.alertWithType('error', 'Error', nextProps.currencyError)
+        }
     }
 
     handlePressBaseCurrency = () => {
@@ -105,7 +118,8 @@ const mapStateToProps = (state) => {
         lastConvertedDate: conversionSelector.date ? new Date(conversionSelector.date) : new Date(),
         isFetching: conversionSelector.isFetching,
         primaryColor: state.theme.primaryColor,
+        currencyError: state.currencies.error,
     }
 }
 
-export default connect(mapStateToProps)(Home)
+export default connect(mapStateToProps)(connectAlert(Home))
