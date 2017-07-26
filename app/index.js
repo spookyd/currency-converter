@@ -1,19 +1,29 @@
 import React, { Component } from 'react'
-import { Provider } from 'react-redux'
+import { Provider, connect } from 'react-redux'
+import { addNavigationHelpers } from 'react-navigation'
 import { AlertProvider } from './components/Alert'
 import Router from './config/routes'
 import store from './config/store'
 
-class App extends Component {
-	render() {
-	    return (
-			<Provider store={store}>
-				<AlertProvider>
-					<Router onNavigationStateChange={null}/>
-				</AlertProvider>
-			</Provider>
-	    )
-  	}
-}
+const App = ({ dispatch, nav }) => (
+	<Router 
+		navigation={addNavigationHelpers({
+			dispatch,
+			state: nav,
+		})}
+	/>
+)
 
-export default App;
+const mapStateToProps = (state) => ({
+	nav: state.nav,
+})
+
+const AppWithRouter = connect(mapStateToProps)(App)
+
+export default () => (
+	<Provider store={store}>
+		<AlertProvider>
+			<AppWithRouter />
+		</AlertProvider>
+	</Provider>
+);
