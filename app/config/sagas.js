@@ -19,7 +19,6 @@ function* fetchLatestConversionRates(action) {
         if (result.error) {
             yield put({ type: CONVERSION_ERROR, error: result.error })
         } else {
-            console.log('Goodamn Errors', result)
             yield put({ type: CONVERSION_RESULT, result })
         }
     } catch (e) {
