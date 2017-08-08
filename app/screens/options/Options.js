@@ -17,6 +17,7 @@ class Options extends Component {
         navigation: PropTypes.object,
         alertWithType: PropTypes.func,
     }
+
     handleThemesPress = () => {
         this.props.navigation.navigate('Themes')
     }

@@ -9,23 +9,28 @@ import { styles, underlayColor } from './styles'
 
 const ListItem = ({ 
     text, 
-    onPress, 
+    onPress,
     selected = false, 
     checkmark = true, 
     visible = true, 
-    customIcon = null, 
-    iconBackground }) => (
-    <TouchableHighlight 
-        onPress={onPress}
-        underlayColor={underlayColor}
-    >
-        <View style={styles.row}>
-            <Text style={styles.text}>{text}</Text>
-            {selected ? <Icon checkmark={checkmark} visible={visible} iconBackground={iconBackground}/> : <Icon />}
-            {customIcon}
-        </View>
-    </TouchableHighlight>
-)
+    customIcon = null,
+    customStyle = {},
+    iconBackground }) => {
+        let rowStyles = [styles.row, customStyle.row]
+        let textStyles = [styles.text, customStyle.text]
+        return (
+        <TouchableHighlight 
+            onPress={onPress}
+            underlayColor={underlayColor}
+        >
+            <View style={rowStyles}>
+                <Text style={textStyles}>{text}</Text>
+                {selected ? <Icon checkmark={checkmark} visible={visible} iconBackground={iconBackground}/> : <Icon />}
+                {customIcon}
+            </View>
+        </TouchableHighlight>
+        )
+    }
 
 ListItem.propTypes = {
     text: PropTypes.string,
@@ -34,6 +39,7 @@ ListItem.propTypes = {
     checkmark: PropTypes.bool,
     visible: PropTypes.bool,
     customIcon: PropTypes.element,
+    customStyle: PropTypes.object,
     iconBackground: PropTypes.string
 }
 

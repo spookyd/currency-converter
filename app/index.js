@@ -14,9 +14,10 @@ const App = ({ dispatch, nav }) => (
 	/>
 )
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state) => {
+	return {
 	nav: state.nav,
-})
+}}
 
 const AppWithRouter = connect(mapStateToProps)(App)
 
