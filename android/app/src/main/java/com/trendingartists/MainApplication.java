@@ -1,4 +1,4 @@
-package com.trendingartists;
+package com.currencyconverter;
 
 import android.app.Application;
 
