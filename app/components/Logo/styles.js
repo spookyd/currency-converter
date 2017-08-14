@@ -1,9 +1,9 @@
 import { StyleSheet, Dimensions } from 'react-native'
 import appStyles from '../../config/styles'
 
-const imageWidth = Dimensions.get('window').width / 2
-const largeContainerImageSize = imageWidth
-const largeImageSize = imageWidth / 2
+const imageWidth = Dimensions.get('window').width / 2;
+const largeContainerImageSize = imageWidth;
+const largeImageSize = imageWidth / 2;
 
 const imageSize = {
     container: {
@@ -14,7 +14,7 @@ const imageSize = {
         small: largeImageSize / 2,
         large: largeImageSize,
     },
-}
+};
 
 const styles = StyleSheet.create({
     container: {
@@ -31,6 +31,6 @@ const styles = StyleSheet.create({
         tintColor: appStyles.colors.primary,
     },
     text: appStyles.text.title
-})
+});
 
 export { styles, imageSize }

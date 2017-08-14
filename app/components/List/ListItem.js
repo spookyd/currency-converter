@@ -16,8 +16,8 @@ const ListItem = ({
     customIcon = null,
     customStyle = {},
     iconBackground }) => {
-        let rowStyles = [styles.row, customStyle.row]
-        let textStyles = [styles.text, customStyle.text]
+        let rowStyles = [styles.row, customStyle.row];
+        let textStyles = [styles.text, customStyle.text];
         return (
         <TouchableHighlight 
             onPress={onPress}
@@ -30,7 +30,7 @@ const ListItem = ({
             </View>
         </TouchableHighlight>
         )
-    }
+    };
 
 ListItem.propTypes = {
     text: PropTypes.string,
@@ -41,6 +41,6 @@ ListItem.propTypes = {
     customIcon: PropTypes.element,
     customStyle: PropTypes.object,
     iconBackground: PropTypes.string
-}
+};
 
 export default ListItem

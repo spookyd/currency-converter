@@ -5,7 +5,7 @@ import { View } from 'react-native'
 import styles from './styles'
 
 const Container = ({ children, backgroundColor }) => {
-    const containerStyles = [styles.container]
+    const containerStyles = [styles.container];
     if (backgroundColor) {
         containerStyles.push({ backgroundColor })
     }
@@ -14,11 +14,11 @@ const Container = ({ children, backgroundColor }) => {
             {children}
         </View>
     )
-}
+};
 
 Container.propTypes = {
     children: PropTypes.any,
     backgroundColor: PropTypes.string,
-}
+};
 
 export default Container

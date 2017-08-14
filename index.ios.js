@@ -7,4 +7,4 @@
 import { AppRegistry } from 'react-native';
 import App from './app/index'
 
-AppRegistry.registerComponent('TrendingArtists', () => App);
+AppRegistry.registerComponent('CurrencyConverter', () => App);

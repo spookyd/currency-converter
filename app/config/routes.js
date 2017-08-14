@@ -30,7 +30,7 @@ const MainStack = StackNavigator({
     }
 }, {
     headerMode: 'screen',
-})
+});
 
 const CurrencyListStack = StackNavigator({
     CurrencyList: {
@@ -39,7 +39,7 @@ const CurrencyListStack = StackNavigator({
             headerTitle: navigation.state.params.title,
         })
     }
-})
+});
 
 export default StackNavigator({
     Home: {

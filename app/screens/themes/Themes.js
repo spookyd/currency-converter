@@ -10,7 +10,7 @@ import { changePrimaryColor, changeTheme } from '../../actions/theme'
 import appStyles, { primaryColors } from '../../config/styles'
 import styles from './styles'
 
-const THEME_OPTIONS = ['Light', 'Dark']
+const THEME_OPTIONS = ['Light', 'Dark'];
 
 class Themes extends Component {
 
@@ -20,7 +20,7 @@ class Themes extends Component {
         selectedTheme: PropTypes.string,
         themeStyles: PropTypes.object,
         primaryColor: PropTypes.string,
-    }
+    };
 
     // TODO: This was causing errors
     // static navigationOptions = {
@@ -30,28 +30,28 @@ class Themes extends Component {
     // }
     
     handleThemePress = (color) => {
-        this.props.dispatch(changePrimaryColor(color))
+        this.props.dispatch(changePrimaryColor(color));
         this.props.navigation.goBack()
-    }
+    };
 
     handleThemeChange = (theme) => {
         this.props.dispatch(changeTheme(theme))
-    }
+    };
 
     componentWillReceiveProps(nextProps) {
-        let styles = nextProps.themeStyles
+        let styles = nextProps.themeStyles;
         if (styles && styles !== this.props.themeStyles) {
             this.props.navigation.setParams({ styles })
         }
     }
 
     render() {
-        let containerStyles = [styles.container]
+        let containerStyles = [styles.container];
         if (this.props.themeStyles) {
             containerStyles.push(this.props.themeStyles.background)
         }
-        let rowStyle = this.props.themeStyles.card
-        let rowTextStyle = this.props.themeStyles.primaryText
+        let rowStyle = this.props.themeStyles.card;
+        let rowTextStyle = this.props.themeStyles.primaryText;
         return (
             <ScrollView style={containerStyles}>
                 <StatusBar barStyle='default' translucent={false} />
@@ -114,6 +114,6 @@ const mapStateToProps = (state) => {
         themeStyles: state.theme.styles,
         primaryColor: state.theme.primaryColor,
     }
-}
+};
 
 export default connect(mapStateToProps)(Themes)

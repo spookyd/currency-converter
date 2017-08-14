@@ -12,7 +12,7 @@ import {
   View
 } from 'react-native';
 
-export default class TrendingArtists extends Component {
+export default class CurrencyConverter extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -50,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('TrendingArtists', () => TrendingArtists);
+AppRegistry.registerComponent('CurrencyConverter', () => CurrencyConverter);

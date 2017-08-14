@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native'
 
 import appStyles from '../../config/styles'
 
-const underlayColor = appStyles.colors.border
+const underlayColor = appStyles.colors.border;
 
 const styles = StyleSheet.create({
     row: {
@@ -34,6 +34,6 @@ const styles = StyleSheet.create({
     icon: {
         width: 18,
     }
-})
+});
 
 export { styles, underlayColor }

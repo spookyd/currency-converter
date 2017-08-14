@@ -8,23 +8,23 @@ import { connectAlert } from '../../components/Alert'
 
 import styles from './styles'
 
-const ICON_PREFIX = Platform.OS === 'ios' ? 'ios' : 'md'
-const ICON_WIDTH = 32
-const ICON_COLOR = '#868686'
+const ICON_PREFIX = Platform.OS === 'ios' ? 'ios' : 'md';
+const ICON_WIDTH = 32;
+const ICON_COLOR = '#868686';
 
 class Options extends Component {
     static propTypes = {
         navigation: PropTypes.object,
         alertWithType: PropTypes.func,
-    }
+    };
 
     handleThemesPress = () => {
         this.props.navigation.navigate('Themes')
-    }
+    };
 
     handleSitePress = () => {
         Linking.openURL('http://fixer.io').catch(() => this.props.alertWithType('error', 'Sorry!', "Fixer.io can't be opened right now"))
-    }
+    };
 
     render() { 
         return (

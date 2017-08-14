@@ -9,6 +9,6 @@ const styles = StyleSheet.create({
         marginVertical: appStyles.dimensions.margins.vertical,
         marginHorizontal: appStyles.dimensions.margins.horizontal,
     }
-})
+});
 
 export default styles

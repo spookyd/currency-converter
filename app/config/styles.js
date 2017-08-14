@@ -3,8 +3,8 @@
  */
 
 // DARK THEME
-const DARK_THEME_BACKGROUND = '#303030'
-const DARK_THEME_BORDER = '#FFFFFF1E'
+const DARK_THEME_BACKGROUND = '#303030';
+const DARK_THEME_BORDER = '#FFFFFF1E';
 
 export const darkTheme = {
     background: {
@@ -25,11 +25,11 @@ export const darkTheme = {
     border: {
         color: DARK_THEME_BORDER,
     }
-}
+};
 
 // LIGHT THEME
-const LIGHT_THEME_BACKGROUND = '#FAFAFA'
-const LIGHT_THEME_BORDER = '#0000001E'
+const LIGHT_THEME_BACKGROUND = '#FAFAFA';
+const LIGHT_THEME_BORDER = '#0000001E';
 
 export const lightTheme = {
     background: {
@@ -50,22 +50,22 @@ export const lightTheme = {
     border: {
         color: LIGHT_THEME_BORDER,
     }
-}
+};
 
-const PRIMARY_BLUE = '#3ABEFF'
-const PRIMARY_ORANGE = '#D57A66'
-const PRIMARY_GREEN = '#00BD9D'
-const PRIMARY_PURPLE = '#9E768F'
+const PRIMARY_BLUE = '#3ABEFF';
+const PRIMARY_ORANGE = '#D57A66';
+const PRIMARY_GREEN = '#00BD9D';
+const PRIMARY_PURPLE = '#9E768F';
 
 export const primaryColors = {
     blue: PRIMARY_BLUE,
     orange: PRIMARY_ORANGE,
     green: PRIMARY_GREEN,
     purple: PRIMARY_PURPLE,
-}
+};
 
-const HORIZONTAL_MARGIN = 16
-const VERTICAL_MARGIN = 16
+const HORIZONTAL_MARGIN = 16;
+const VERTICAL_MARGIN = 16;
 
 const styles = {
     colors: {

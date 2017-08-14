@@ -8,6 +8,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: appStyles.colors.primary
     }
-})
+});
 
 export default styles

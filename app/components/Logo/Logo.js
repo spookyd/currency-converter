@@ -5,32 +5,32 @@ import { View, Text, Image, Keyboard, Animated, Platform } from 'react-native'
 import { styles, imageSize } from './styles'
 import images from '../../config/images'
 
-const ANIMATION_DURATION = 250
+const ANIMATION_DURATION = 250;
 
 class Logo extends Component {
     static propTypes = {
         tintColor: PropTypes.string,
-    }
+    };
 
     constructor(props) {
-        super(props)
-        this.containerImageSize = new Animated.Value(imageSize.container.large)
+        super(props);
+        this.containerImageSize = new Animated.Value(imageSize.container.large);
         this.imageSize = new Animated.Value(imageSize.nested.large)
     }
 
     componentDidMount() {
-        let keyboardShowEvent = 'keyboardWillShow'
-        let keyboardHideEvent = 'keyboardWillHide'
+        let keyboardShowEvent = 'keyboardWillShow';
+        let keyboardHideEvent = 'keyboardWillHide';
         if (Platform.OS === 'android') {
-            keyboardShowEvent = 'keyboardDidShow'
+            keyboardShowEvent = 'keyboardDidShow';
             keyboardHideEvent = 'keyboardDidHide'
         }
-        this.keyboardShowListener = Keyboard.addListener(keyboardShowEvent, this.onKeyboardShow)
+        this.keyboardShowListener = Keyboard.addListener(keyboardShowEvent, this.onKeyboardShow);
         this.keyboardHideListener = Keyboard.addListener(keyboardHideEvent, this.onKeyboardHide)
     }
 
     componentWillUnmount() {
-        this.keyboardShowListener.remove()
+        this.keyboardShowListener.remove();
         this.keyboardHideListener.remove()
     }
 
@@ -45,7 +45,7 @@ class Logo extends Component {
                 duration: ANIMATION_DURATION,
             }),
         ]).start()
-    }
+    };
 
     onKeyboardHide = () => {
         Animated.parallel([
@@ -58,18 +58,18 @@ class Logo extends Component {
                 duration: ANIMATION_DURATION,
             }),
         ]).start()
-    }
+    };
 
     render() {
         const containerImageStyle = [
             styles.containerImage,
             { width: this.containerImageSize, height: this.containerImageSize }
-        ]
+        ];
         const imageStlye = [
             styles.image,
             { width: this.imageSize },
             this.props.tintColor ? { tintColor: this.props.tintColor } : null
-        ]
+        ];
         return (
             <View style={ styles.container } >
                 <Animated.Image

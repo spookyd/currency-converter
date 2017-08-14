@@ -7,11 +7,11 @@ class AlertProvider extends Component {
   static childContextTypes = {
     alertWithType: PropTypes.func,
     alert: PropTypes.func,
-  }
+  };
 
   static propTypes = {
     children: PropTypes.any,
-  }
+  };
 
   getChildContext() {
     return {

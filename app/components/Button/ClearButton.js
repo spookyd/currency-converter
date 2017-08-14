@@ -19,11 +19,11 @@ const ClearButton = ({ text, onPress }) => (
             <Text style={styles.text} >{text}</Text>
         </View>
     </TouchableOpacity>
-)
+);
 
 ClearButton.propTypes = { 
     text: PropTypes.string,
     onPress: PropTypes.func
-}
+};
 
 export default ClearButton

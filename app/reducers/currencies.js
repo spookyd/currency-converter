@@ -22,7 +22,7 @@ const setConversion = (state, action) => {
         isFetching: true,
         date: '',
         rates: {},
-    }
+    };
 
     if (state.conversions[action.currency]) {
         conversion = state.conversions[action.currency]
@@ -32,7 +32,7 @@ const setConversion = (state, action) => {
         ...state.conversions,
         [action.currency]: conversion,
     }
-}
+};
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
@@ -40,30 +40,30 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 amount: action.amount || 0,
-            }
+            };
         case SWAP_CURRENCY:
             return {
                 ...state,
                 baseCurrency: state.quoteCurrency,
                 quoteCurrency: state.baseCurrency,
-            }
+            };
         case CHANGE_BASE_CURRENCY:
             return {
                 ...state,
                 baseCurrency: action.currency || state.baseCurrency,
                 conversions: setConversion(state, action),
-            }
+            };
         case CHANGE_QUOTE_CURRENCY:
             return {
                 ...state,
                 quoteCurrency: action.currency || state.quoteCurrency,
                 conversions: setConversion(state, action),
-            }
+            };
         case GET_INITIAL_CONVERSION:
             return {
                 ...state,
                 conversions: setConversion(state, { currency: state.baseCurrency, })
-            }
+            };
         case CONVERSION_RESULT:
             return {
                 ...state,
@@ -75,15 +75,15 @@ const reducer = (state = initialState, action) => {
                         ...action.result,
                     }
                 }
-            }
+            };
         case CONVERSION_ERROR:
             return {
                 ...state,
                 error: action.error,
-            }
+            };
         default:
             return state
     }
-}
+};
 
 export default reducer

@@ -19,6 +19,6 @@ const styles = StyleSheet.create({
     icon: {
         width: 18
     }
-})
+});
 
 export default styles

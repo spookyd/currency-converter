@@ -18,9 +18,9 @@ const connectAlert = (WrappedComponent) => {
   ConnectedAlert.contextTypes = {
     alertWithType: PropTypes.func,
     alert: PropTypes.func,
-  }
+  };
 
   return hoistNonReactStatic(ConnectedAlert, WrappedComponent)
-}
+};
 
 export default connectAlert

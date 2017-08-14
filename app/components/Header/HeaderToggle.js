@@ -17,10 +17,10 @@ const HeaderToggle = ({ onPress }) => (
             />
         </TouchableOpacity>
     </View>
-)
+);
 
 HeaderToggle.propTypes = {
     onPress: PropTypes.func
-}
+};
 
 export default HeaderToggle

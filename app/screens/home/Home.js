@@ -1,19 +1,17 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import { View, StatusBar, KeyboardAvoidingView } from 'react-native'
+import {connect} from 'react-redux'
+import {KeyboardAvoidingView, StatusBar} from 'react-native'
 
-import { connectAlert } from '../../components/Alert'
-import { HeaderToggle } from '../../components/Header'
-import { Container } from '../../components/Container'
-import { Logo } from '../../components/Logo'
-import { InputWithButton } from '../../components/TextInput'
-import { ClearButton } from '../../components/Button'
-import { LastConverted } from '../../components/Text'
+import {connectAlert} from '../../components/Alert'
+import {HeaderToggle} from '../../components/Header'
+import {Container} from '../../components/Container'
+import {Logo} from '../../components/Logo'
+import {InputWithButton} from '../../components/TextInput'
+import {ClearButton} from '../../components/Button'
+import {LastConverted} from '../../components/Text'
 
-import { swapCurrency, changeCurrencyAmount, getInitialConversion } from '../../actions/currencies'
-
-import styles from './styles'
+import {changeCurrencyAmount, getInitialConversion, swapCurrency} from '../../actions/currencies'
 
 class Home extends Component {
     
@@ -29,7 +27,7 @@ class Home extends Component {
         primaryColor: PropTypes.string,
         alertWithType: PropTypes.func,
         currencyError: PropTypes.string,
-    }
+    };
 
     componentWillMount() {
         this.props.dispatch(getInitialConversion())
@@ -43,26 +41,26 @@ class Home extends Component {
 
     handlePressBaseCurrency = () => {
         this.props.navigation.navigate('CurrencyList', { title: 'Base Currency', type: 'base' })
-    }
+    };
 
     handlePressQuoteCurrency = () => {
         this.props.navigation.navigate('CurrencyList', { title: 'Quote Currency', type: 'quote' })
-    }
+    };
 
     handleTextChange = (amount) => {
         this.props.dispatch(changeCurrencyAmount(amount))
-    }
+    };
 
     handleSwapCurrency = () => {
         this.props.dispatch(swapCurrency())
-    }
+    };
 
     handleSettingsPress = () => {
         this.props.navigation.navigate('Options', { title: 'Options'})
-    }
+    };
 
     render() {
-        let quotePrice = (this.props.amount * this.props.conversionRate).toFixed(2)
+        let quotePrice = (this.props.amount * this.props.conversionRate).toFixed(2);
         if (this.props.isFetching) {
             quotePrice = '...'
         }
@@ -106,10 +104,10 @@ class Home extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const baseCurrency = state.currencies.baseCurrency
-    const quoteCurrency = state.currencies.quoteCurrency
-    const conversionSelector = state.currencies.conversions[baseCurrency] || {}
-    const rates = conversionSelector.rates || {}
+    const baseCurrency = state.currencies.baseCurrency;
+    const quoteCurrency = state.currencies.quoteCurrency;
+    const conversionSelector = state.currencies.conversions[baseCurrency] || {};
+    const rates = conversionSelector.rates || {};
     return {
         baseCurrency,
         quoteCurrency,
@@ -120,6 +118,6 @@ const mapStateToProps = (state) => {
         primaryColor: state.theme.primaryColor,
         currencyError: state.currencies.error,
     }
-}
+};
 
 export default connect(mapStateToProps)(connectAlert(Home))

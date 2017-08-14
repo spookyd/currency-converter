@@ -2,10 +2,10 @@ import { StyleSheet } from 'react-native'
 import appStyles from '../../config/styles'
 import color from 'color'
 
-const INPUT_HEIGHT = 48
-const BORDER_RADIUS = 4
+const INPUT_HEIGHT = 48;
+const BORDER_RADIUS = 4;
 
-const underlayColor = color('#FFFFFF').darken(0.1)
+const underlayColor = color('#FFFFFF').darken(0.1);
 
 const styles = StyleSheet.create({
     container: {
@@ -46,6 +46,6 @@ const styles = StyleSheet.create({
         paddingHorizontal: appStyles.dimensions.padding.horizontal,
         color: appStyles.colors.inputText
     },
-})
+});
 
 export { styles, underlayColor }

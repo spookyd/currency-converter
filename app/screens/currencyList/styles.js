@@ -12,6 +12,6 @@ const styles = StyleSheet.create ({
     list: {
 
     },
-})
+});
 
 export default styles

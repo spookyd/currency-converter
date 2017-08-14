@@ -10,6 +10,6 @@ const FootNote = ({ text }) => (
 
 FootNote.propTypes = {
     text: PropTypes.string
-}
+};
 
 export default FootNote
